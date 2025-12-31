@@ -11,8 +11,8 @@ The **Forge Byte Registration Portal** is a robust web application that streamli
 The project follows **industry-standard Django development practices**, offering a clean architecture, structured workflows, and a powerful administrative interface.
 
 ## Project Flowchart
-
 ![Project Flowchart](flowchart.svg)
+
 ---
 
 ## ✨ Key Features
