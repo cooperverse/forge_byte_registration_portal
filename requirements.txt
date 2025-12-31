@@ -1,0 +1,20 @@
+# Django core
+Django==6.0
+
+# Django REST Framework
+djangorestframework==3.16.1
+
+# Forms and frontend helpers
+django-crispy-forms==2.5
+crispy-bootstrap5==2025.6
+
+# JWT Authentication
+djangorestframework-simplejwt==5.5.1
+PyJWT==2.10.1
+
+# PDF generation
+xhtml2pdf==0.2.17
+reportlab==4.4.7
+
+# HTTP requests (if used in your project)
+requests==2.32.5

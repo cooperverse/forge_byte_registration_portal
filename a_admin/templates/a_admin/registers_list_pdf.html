@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Register List PDF</title>
+    <style>
+        body { font-family: DejaVu Sans, sans-serif; font-size: 12px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #000; padding: 6px; text-align: center; }
+        th { background-color: #0d6efd; color: white; }
+        h2 { text-align: center; color: #0d6efd; }
+        ul { padding-left: 15px; margin: 0; }
+    </style>
+</head>
+<body>
+    <h2>TECH NOTHING - Register List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Roll</th>
+                <th>Department</th>
+                <th>Course</th>
+                <th>Qualifications</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reg in registers %}
+            <tr>
+                <td>{{ reg.first_name }} {{ reg.last_name }}</td>
+                <td>{{ reg.email }}</td>
+                <td>{{ reg.roll }}</td>
+                <td>{{ reg.department }}</td>
+                <td>{{ reg.course }}</td>
+                <td class="text-left">
+                    <ul>
+                        {% for q in reg.qualifications.all %}
+                        <li>{{ q.exam_name }} - {{ q.institute_name }} - GPA: {{ q.gpa }} - {{ q.passing_year }}</li>
+                        {% empty %}
+                        <li>No qualifications</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

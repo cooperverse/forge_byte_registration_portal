@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}FORGE BYTE AI LAB{% endblock title %}
+
+{% block content %}
+<div class="container-fluid bg-light py-5">
+
+    <!-- Hero Section -->
+    <div class="container text-center py-5">
+        <h1 class="display-4 fw-bold">FBAL</h1>
+        <h4 class="\ fw-bold">FORGE BYTE AI LAB</h4>
+        <p class="lead text-muted mt-3">
+            Building reliable technology solutions with clarity, precision, and purpose.
+        </p>
+
+        <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{% url 'register' %}" target="_blanks" class="btn btn-primary btn-lg px-4">
+                Applicant Registration
+            </a>
+            <a href="{% url 'login' %}" class="btn btn-outline-dark btn-lg px-4">
+                Admin Login
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- About Section -->
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <h2 class="fw-bold">Who We Are</h2>
+            <p class="text-muted mt-3">
+                FBAL is a modern technology-driven organization focused on
+                software development, system design, and digital solutions.
+                We prioritize simplicity, security, and scalability in everything we build.
+            </p>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4">
+                <h5 class="fw-semibold mb-3">What We Do</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>✔ Web Application Development</li>
+                    <li>✔ Backend Systems (Django & APIs)</li>
+                    <li>✔ Secure Authentication Systems</li>
+                    <li>✔ Data Management Solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+
+
+{% endblock content %}

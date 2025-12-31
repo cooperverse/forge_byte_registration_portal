@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Registration Successful{% endblock title %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+
+    <div class="card shadow-lg border-0 text-center p-5" style="max-width: 500px;">
+        
+        <!-- Message -->
+        <h2 class="text-success mb-3">Registration Successful</h2>
+        <p class="text-muted mb-4">
+            Your registration has been completed successfully.
+            Our team will review your information shortly.
+        </p>
+
+        <!-- Info Box -->
+        <div class="alert alert-light border text-start mb-4">
+            <strong>What happens next?</strong>
+            <ul class="mb-0 mt-2">
+                <li>Your data is securely stored</li>
+                <li>Admin verification will be completed</li>
+                <li>You will be contacted if further action is required</li>
+            </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-grid gap-2">
+            <a href="{% url 'register' %}" class="btn btn-outline-secondary">
+                Back to Home
+            </a>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

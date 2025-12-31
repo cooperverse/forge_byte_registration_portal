@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white text-center py-3">
+            <h2 class="mb-0 fw-bold">Registration Form</h2>
+        </div>
+
+        <div class="card-body p-4">
+
+            <!-- Main Registration Form -->
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <h5 class="mb-3 fw-semibold">Personal Information</h5>
+                <div class="mb-4">
+                    {{ form|crispy }}
+                </div>
+
+                <hr>
+
+                <!-- Academic Qualifications -->
+                <h5 class="mb-3 fw-semibold">Academic Qualifications</h5>
+                {{ formset.management_form }}
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered table-striped align-middle text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Exam Name</th>
+                                <th>Institute Name</th>
+                                <th>Group / Subject</th>
+                                <th>Board / University</th>
+                                <th>Passing Year</th>
+                                <th>CGPA / GPA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for f in formset %}
+                            <tr>
+                                <td>{{ f.exam_name }}</td>
+                                <td>{{ f.institute_name }}</td>
+                                <td>{{ f.group_subject }}</td>
+                                <td>{{ f.board_university }}</td>
+                                <td>{{ f.passing_year }}</td>
+                                <td>{{ f.gpa }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        Register
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="card-footer text-center text-muted small">
+            All fields are required unless marked optional
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
